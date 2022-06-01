@@ -3,6 +3,6 @@ import sys
 
 sys.path.insert(0, "/var/www/DigitalArtPortfolio/")
 
-from flaskapp import app as application
-from flaskapp import ENV
+from web import app as application
+from web import ENV
 application.secret_key = ENV["secret_key"]

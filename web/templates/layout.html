@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <script src="/static/jquery-3.4.1.js"></script>
+  <script src="/static/plotly.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+{#    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">#}
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='emoji/emojionearea.css') }}">
+  <script src="{{ url_for('static', filename='emoji/emojionearea.min.js') }}"></script>
+  {% block head %}{% endblock %}
+
+  <script type="text/javascript">
+      let $DOMAIN = {{ request.script_root|tojson|safe }};
+      let MOBILE = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+  </script>
+
+  {% if title %}
+    <title>{{ title }}</title>
+  {% else %}
+    <title>Paolo's Projects</title>
+  {% endif %}
+</head>
+{% if not no_header %}
+<body>
+{% else %}
+<body style="margin-top: 1rem">
+{% endif %}
+
+  {% if not no_header %}
+  <header class="site-header">
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
+      <div class="container">
+        <a class="navbar-brand mr-4" href="/">Paolo's Projects</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggle">
+          <div class="navbar-nav mr-auto">
+            <a class="nav-item nav-link" href="{{ url_for("home") }}">Home</a>
+{#              <a class="nav-item nav-link" href="{{ url_for("dnd_all_sessions") }}">D&D</a>#}
+{#              <a class="nav-item nav-link" href="{{ url_for("civ") }}">Civ</a>#}
+{#              <a class="nav-item nav-link" href="{{ url_for("server_status_route") }}">MC Server</a>#}
+            <a class="nav-item nav-link" href="{{ url_for("apples_sessions") }}">Apples to Apples</a>
+            <a class="nav-item nav-link" href="{{ url_for("pollbot") }}">Discord Polls</a>
+            <a class="nav-item nav-link" href="{{ url_for("dnd_stats_tracker") }}">D&D Stat Tracker</a>
+          </div>
+          <!-- Navbar Right Side -->
+          <div class="navbar-nav">
+            {% if current_user.is_authenticated %}
+              <a class="nav-item nav-link" href="{{ url_for("account") }}">{{ current_user.username }}</a>
+              {% if has_permission("users") %}
+                <a class="nav-item nav-link" href="{{ url_for("users") }}">Users</a>
+              {% endif %}
+              <a class="nav-item nav-link" href="{{ url_for("logout") }}">Logout</a>
+            {% else %}
+              <a class="nav-item nav-link" href="{{ url_for("login") }}">Login</a>
+              <a class="nav-item nav-link" href="{{ url_for("register") }}">Register</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  {% endif %}
+
+
+  <main role="main" {% if no_container %}style="padding-left: 1%; padding-right: 1%;"{% else %}class="container"{% endif %}>
+
+    <div class="row">
+      <div class="col-md-12"> {# used to be col-md-8 #}
+        {% with messages = get_flashed_messages(with_categories=True) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="alert alert-{{ category }}">
+                {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+      </div>
+{#        <div class="col-md-4">#}
+{#          <div class="content-section">#}
+{#            <h3>Our Sidebar</h3>#}
+{#            <p class='text-muted'>You can put any information here you'd like.#}
+{#              <ul class="list-group">#}
+{#                <li class="list-group-item list-group-item-light">Latest Posts</li>#}
+{#                <li class="list-group-item list-group-item-light">Announcements</li>#}
+{#                <li class="list-group-item list-group-item-light">Calendars</li>#}
+{#                <li class="list-group-item list-group-item-light">etc</li>#}
+{#              </ul>#}
+{#            </p>#}
+{#          </div>#}
+{#        </div>#}
+    </div>
+  </main>
+
+  {% block scripts %}{% endblock %}
+  <script>
+      $(function () {
+          $('[data-toggle="tooltip"]').tooltip()
+      })
+  </script>
+
+</body>
+</html>

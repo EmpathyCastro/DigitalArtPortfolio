@@ -1,0 +1,17 @@
+.splash {
+    background-image: url("/static/images/front.png");
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+    background-position: center bottom;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    bottom: 0;
+    padding-top: 5rem;
+}
+
+.splash-link {
+    background-color: rgba(0, 0, 0, 0.42);
+    padding-top: 3px;
+    padding-bottom: 18px;
+}

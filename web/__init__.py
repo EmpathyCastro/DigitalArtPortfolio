@@ -2,14 +2,11 @@ import os
 import json
 from flask import Flask
 
-from web import startup_utils
 from web.common import from_root
 
 # System Files
 VARIABLES_FILE = from_root(os.pardir, "flask_env.json")
 
-
-startup_utils.generate_app_structure()
 
 with open(VARIABLES_FILE) as var_file:
     ENV = json.load(var_file)

@@ -4,3 +4,4 @@ flask_env.json
 *.lock
 .packages
 .dart_tool
+__pycache__

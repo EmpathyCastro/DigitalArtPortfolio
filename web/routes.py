@@ -17,4 +17,4 @@ def internal_server_error(_):
 
 @app.route("/")
 def home():
-    return flask.render_template("general/home.html", title="Home")
+    return flask.render_template("home.html", title="Home")

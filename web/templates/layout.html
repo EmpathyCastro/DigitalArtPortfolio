@@ -5,8 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <script src="{{ url_for("static", filename="vendor/js/jquery-3.4.1.js") }}"></script>
+  <script src="{{ url_for("static", filename="vendor/bootstrap-5.1.3/dist/js/bootstrap.bundle.min.js") }}"></script>
 
   <link rel="stylesheet" type="text/css" href="{{ url_for("static", filename="css/main.css") }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for("static", filename="vendor/bootstrap-5.1.3/dist/css/bootstrap.min.css") }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for("static", filename="css/custom-bootstrap.css") }}">
 
   <script type="text/javascript">
       let $DOMAIN = {{ request.script_root|tojson|safe }};
@@ -20,34 +23,34 @@
   {% endif %}
 </head>
 
-<body {% if no_header %}style="margin-top: 1rem"{% endif %}>
+<body {% if not no_header %}style="margin-top: 4rem"{% endif %}>
 
   {% if not no_header %}
   <header class="site-header">
-    <nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
+    <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
       <div class="container">
-        <a class="navbar-brand mr-4" href="/">Paolo's Projects</a>
+        <a class="navbar-brand mr-4" href="/">Paolo Castro</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarToggle">
           <div class="navbar-nav mr-auto">
-            <a class="nav-item nav-link" href="{{ url_for("home") }}">Home</a>
-            <a class="nav-item nav-link" href="{{ url_for("apples_sessions") }}">Apples to Apples</a>
+            <a class="nav-item nav-link active" href="{{ url_for("home") }}"><span>Home</span></a>
+{#            <a class="nav-item nav-link" href="{{ url_for("apples_sessions") }}">Apples to Apples</a>#}
           </div>
           <!-- Navbar Right Side -->
-          <div class="navbar-nav">
-            {% if current_user.is_authenticated %}
-              <a class="nav-item nav-link" href="{{ url_for("account") }}">{{ current_user.username }}</a>
-              {% if has_permission("users") %}
-                <a class="nav-item nav-link" href="{{ url_for("users") }}">Users</a>
-              {% endif %}
-              <a class="nav-item nav-link" href="{{ url_for("logout") }}">Logout</a>
-            {% else %}
-              <a class="nav-item nav-link" href="{{ url_for("login") }}">Login</a>
-              <a class="nav-item nav-link" href="{{ url_for("register") }}">Register</a>
-            {% endif %}
-          </div>
+{#          <div class="navbar-nav">#}
+{#            {% if current_user.is_authenticated %}#}
+{#              <a class="nav-item nav-link" href="{{ url_for("account") }}">{{ current_user.username }}</a>#}
+{#              {% if has_permission("users") %}#}
+{#                <a class="nav-item nav-link" href="{{ url_for("users") }}">Users</a>#}
+{#              {% endif %}#}
+{#              <a class="nav-item nav-link" href="{{ url_for("logout") }}">Logout</a>#}
+{#            {% else %}#}
+{#              <a class="nav-item nav-link" href="{{ url_for("login") }}">Login</a>#}
+{#              <a class="nav-item nav-link" href="{{ url_for("register") }}">Register</a>#}
+{#            {% endif %}#}
+{#          </div>#}
         </div>
       </div>
     </nav>

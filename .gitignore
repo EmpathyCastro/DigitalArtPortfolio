@@ -1,3 +1,6 @@
 /venv
 .idea
 flask_env.json
+*.lock
+.packages
+.dart_tool

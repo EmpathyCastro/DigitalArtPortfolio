@@ -1,0 +1,8 @@
+{% extends "layout.html" %}
+{% block content %}
+  <h1 class="mt-2 display-1">Project 1</h1>
+  <p>An error occurred while trying to load your page. {% if not nav_page %}NO NAV_PAGE SET{% else %}{{ nav_page }}{% endif %}</p>
+  <a class="btn btn-lg btn-primary" href="javascript:history.go(0)">Try again!</a>
+  <a class="btn btn-lg btn-outline-primary" href="{{ url_for("home") }}">Back to home page</a>
+
+{% endblock content %}

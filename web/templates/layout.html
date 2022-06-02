@@ -24,7 +24,7 @@
 
   {% if not no_header %}
   <header class="site-header">
-    <nav class="navbar navbar-expand-md {% if not splash %}navbar-light bg-light{% else %}navbar-dark bg-black{% endif %} fixed-top">
+    <nav class="navbar navbar-expand-md {% if not splash %}navbar-dark bg-black{% else %}navbar-dark bg-black{% endif %} fixed-top">
       <div class="container">
         <a class="navbar-brand mr-4" href="/">Paolo Castro</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,12 +33,11 @@
         <div class="collapse navbar-collapse" id="navbarToggle">
           <div class="navbar-nav mr-auto">
             <a class="nav-item nav-link {% if nav_page == "home" %}active{% endif %}" href="{{ url_for("home") }}"><span>Home</span></a>
-            <a class="nav-item nav-link {% if nav_page == "project1" %}active{% endif %}" href="#"><span>Project 1</span></a>
-            <a class="nav-item nav-link {% if nav_page == "project2" %}active{% endif %}" href="#"><span>Project 2</span></a>
-            <a class="nav-item nav-link {% if nav_page == "project3" %}active{% endif %}" href="#"><span>Project 3</span></a>
-            <a class="nav-item nav-link {% if nav_page == "project4" %}active{% endif %}" href="#"><span>Project 4</span></a>
-            <a class="nav-item nav-link {% if nav_page == "project5" %}active{% endif %}" href="#"><span>Project 5</span></a>
-{#            <a class="nav-item nav-link" href="{{ url_for("apples_sessions") }}">Apples to Apples</a>#}
+            <a class="nav-item nav-link {% if nav_page == "project1" %}active{% endif %}" href="{{ url_for("project1") }}"><span>Proj. 1</span></a>
+            <a class="nav-item nav-link {% if nav_page == "project2" %}active{% endif %}" href="{{ url_for("project2") }}"><span>Proj. 2</span></a>
+            <a class="nav-item nav-link {% if nav_page == "project3" %}active{% endif %}" href="{{ url_for("project3") }}"><span>Proj. 3</span></a>
+            <a class="nav-item nav-link {% if nav_page == "project4" %}active{% endif %}" href="{{ url_for("project4") }}"><span>Proj. 4</span></a>
+            <a class="nav-item nav-link {% if nav_page == "project5" %}active{% endif %}" href="{{ url_for("project5") }}"><span>Proj. 5</span></a>
           </div>
           <!-- Navbar Right Side -->
 {#          <div class="navbar-nav">#}

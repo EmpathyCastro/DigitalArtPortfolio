@@ -1,14 +1,7 @@
 {% extends "layout.html" %}
 {% block content %}
-  <h1>Oh no!</h1>
+  <h1 class="mt-2">Oh no!</h1>
   <p>An error occurred while trying to load your page.</p>
   <a class="btn btn-lg btn-primary" href="javascript:history.go(0)">Try again</a>
   <a class="btn btn-lg btn-outline-primary" href="{{ url_for("home") }}">Back to home page</a>
-
-  {% if has_permission("all") %}
-    <h3 class="mt-4">Traceback:</h3>
-    <pre>
-    {{ error }}
-    </pre>
-  {% endif %}
 {% endblock content %}

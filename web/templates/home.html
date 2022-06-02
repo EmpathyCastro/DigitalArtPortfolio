@@ -2,17 +2,49 @@
 
 {% block content %}
   <div class="text-light bg-black splash" id="splash">
-    <h1 class="text-center display-1">Paolo Castro</h1>
-    <h3 class="text-center display-5">ARTS 2126 - Digital Art</h3>
-    <div class="text-center vstack gap-3 mt-4">
-      <a class="h5 text-primary splash-link text-decoration-none" href="{{ url_for("project1") }}"><span>Old Languages — New Images</span></a>
-      <a class="h5 text-primary splash-link text-decoration-none" href="{{ url_for("project2") }}"><span>Quietest Place</span></a>
-      <a class="h5 text-primary splash-link text-decoration-none" href="{{ url_for("project3") }}"><span>Intimate, Indispensable GIF</span></a>
-      <a class="h5 text-primary splash-link text-decoration-none" href="{{ url_for("project4") }}"><span>Word As Image: Kinetic Typography</span></a>
-      <a class="h5 text-primary splash-link text-decoration-none" href="{{ url_for("project5") }}"><span>Animated Conversation</span></a>
-      <a class="h5 text-primary splash-link text-decoration-none" href="{{ url_for("statements") }}"><span>Artist Statements</span></a>
-      <a class="h5 text-primary splash-link text-decoration-none" href="{{ url_for("reflections") }}"><span>The Activity of Self-Reflection Writings</span></a>
+  </div>
+  <div class="mt-3 container">
+    <h5 class="text-center display-5">Paolo Castro  ·  Digital Art Portfolio</h5>
+    <div class="mt-4 d-flex flex-wrap justify-content-center">
+      <a class="preview-container flex-fill text-light" href="{{ url_for("project1") }}">
+        <div class="h5 text-decoration-underline text-primary" href="#">Project 1: Old Languages — New Images</div>
+        <div>—</div>
+      </a>
+      <a class="preview-container flex-fill text-light" href="{{ url_for("project2") }}">
+        <div class="h5 text-decoration-underline text-primary" href="#">Project 2: Quietest Place</div>
+        <div>—</div>
+      </a>
+      <a class="preview-container flex-fill text-light" href="{{ url_for("project3") }}">
+        <div class="h5 text-decoration-underline text-primary" href="#">Project 3: Intimate, Indispensable GIF</div>
+        <div>—</div>
+      </a>
+      <a class="preview-container flex-fill text-light" href="{{ url_for("project4") }}">
+        <div class="h5 text-decoration-underline text-primary" href="#">Project 4: Word As Image: Kinetic Typography</div>
+        <div>—</div>
+      </a>
+      <a class="preview-container flex-fill text-light" href="{{ url_for("project5") }}">
+        <div class="h5 text-decoration-underline text-primary" href="#">Project 5: Animated Conversation</div>
+        <div>—</div>
+      </a>
     </div>
+    <div class="d-flex flex-wrap justify-content-center mt-5 mb-5">
+      <a class="preview-container flex-fill text-light pb-3" href="{{ url_for("statements") }}">
+        <div class="h5 text-decoration-underline text-primary" href="#">Artist Statements</div>
+      </a>
+      <a class="preview-container flex-fill text-light pb-3" href="{{ url_for("reflections") }}">
+        <div class="h5 text-decoration-underline text-primary" href="#">Self-Reflection Writing</div>
+      </a>
+    </div>
+{#    <h3 class="text-center display-5">ARTS 2126 - Digital Art</h3>#}
+{#    <div class="text-center vstack gap-3 mt-4">#}
+{#      <a class="h5 text-primary splash-link text-decoration-none" href="{{ url_for("project1") }}"><span>Old Languages — New Images</span></a>#}
+{#      <a class="h5 text-primary splash-link text-decoration-none" href="{{ url_for("project2") }}"><span>Quietest Place</span></a>#}
+{#      <a class="h5 text-primary splash-link text-decoration-none" href="{{ url_for("project3") }}"><span>Intimate, Indispensable GIF</span></a>#}
+{#      <a class="h5 text-primary splash-link text-decoration-none" href="{{ url_for("project4") }}"><span>Word As Image: Kinetic Typography</span></a>#}
+{#      <a class="h5 text-primary splash-link text-decoration-none" href="{{ url_for("project5") }}"><span>Animated Conversation</span></a>#}
+{#      <a class="h5 text-primary splash-link text-decoration-none" href="{{ url_for("statements") }}"><span>Artist Statements</span></a>#}
+{#      <a class="h5 text-primary splash-link text-decoration-none" href="{{ url_for("reflections") }}"><span>The Activity of Self-Reflection Writings</span></a>#}
+{#    </div>#}
   </div>
 {#  <div class="bg-black">#}
 {#    <img alt="" src="{{ url_for("static", filename="images/front.png") }}" class="w-100">#}
@@ -21,19 +53,19 @@
 
 {% block scripts %}
   <script>
-    let splash = $("#splash")
-    let win = $(window)
+    {#let splash = $("#splash")#}
+    {#let win = $(window)#}
 
-    function pageResize() {
-        if (win.height() > win.width()) { // narrow
-            splash.css("background-position", "center bottom")
-        } else { // wide
-            splash.css("background-position", "center top")
-        }
-    }
-
-    $(window).on("resize", pageResize)
-
-    $(window).ready(pageResize)
+    {#function pageResize() {#}
+    {#    if (win.height() > win.width()) { // narrow#}
+    {#        splash.css("background-position", "center bottom")#}
+    {#    } else { // wide#}
+    {#        splash.css("background-position", "center top")#}
+    {#    }#}
+    {#}#}
+    {##}
+    {#$(window).on("resize", pageResize)#}
+    {##}
+    {#$(window).ready(pageResize)#}
   </script>
 {% endblock scripts %}

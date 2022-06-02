@@ -22,27 +22,27 @@ def home():
 
 @app.route("/project1")
 def project1():
-    return flask.render_template("empty-project.html", nav_page="project1")
+    return flask.render_template("empty-project.html", nav_page="projects")
 
 
 @app.route("/project2")
 def project2():
-    return flask.render_template("empty-project.html", nav_page="project2")
+    return flask.render_template("empty-project.html", nav_page="projects")
 
 
 @app.route("/project3")
 def project3():
-    return flask.render_template("empty-project.html", nav_page="project3")
+    return flask.render_template("empty-project.html", nav_page="projects")
 
 
 @app.route("/project4")
 def project4():
-    return flask.render_template("empty-project.html", nav_page="project4")
+    return flask.render_template("empty-project.html", nav_page="projects")
 
 
 @app.route("/project5")
 def project5():
-    return flask.render_template("empty-project.html", nav_page="project5")
+    return flask.render_template("empty-project.html", nav_page="projects")
 
 
 @app.route("/statements")

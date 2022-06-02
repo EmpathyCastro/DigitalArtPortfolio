@@ -11124,11 +11124,11 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-.nav-item > span {
+.nav-link > span {
   padding: 6px 11px 6px 11px;
 }
 
-.nav-item.active > span, .nav-item:hover > span {
+.nav-link.active > span, .nav-link:hover > span {
   border-width: 3px;
   border-style: solid;
   padding: 3px 8px 6px 8px;

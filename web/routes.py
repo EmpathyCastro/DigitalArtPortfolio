@@ -22,7 +22,7 @@ def home():
 
 @app.route("/project1")
 def project1():
-    return flask.render_template("empty-project.html", nav_page="projects")
+    return flask.render_template("project1.html", nav_page="projects")
 
 
 @app.route("/project2")

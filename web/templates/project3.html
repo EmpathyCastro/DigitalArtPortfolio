@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+  <h1 class="mt-2 mb-4 display-1 text-primary">Project 3: Intimate, Indispensable GIF</h1>
+  <div class="project-container mb-5 pb-2">
+    <h3>The Light in the Dark</h3>
+    <div class="text-center">
+      <div class="center mt-3">
+        <img alt="" style="max-width: 100%; max-height: 90vh;" src="{{ url_for("static", filename="images/project3/ezgif-3-final.gif") }}">
+      </div>
+    </div>
+    <div class="mt-5 text-center">
+      <p><a href="{{ url_for("statements") }}">Artist Statement</a></p>
+      <p><a href="{{ url_for("reflections") }}">Reflection</a></p>
+    </div>
+  </div>
+
+{% endblock content %}

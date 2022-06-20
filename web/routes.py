@@ -32,7 +32,7 @@ def project2():
 
 @app.route("/project3")
 def project3():
-    return flask.render_template("empty-project.html", nav_page="projects")
+    return flask.render_template("project3.html", nav_page="projects")
 
 
 @app.route("/project4")

@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+  <h1 class="mt-2 mb-4 display-1 text-primary">Project 4: Word as Image: Kinetic Typography</h1>
+  <div class="project-container mb-5 pb-2">
+    <h3>Unity</h3>
+    <div class="text-center">
+      <div class="center mt-3">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Lz5D2tuDgjE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="mt-5 text-center">
+      <p><a href="{{ url_for("statements") }}">Artist Statement</a></p>
+      <p><a href="{{ url_for("reflections") }}">Reflection</a></p>
+    </div>
+  </div>
+
+{% endblock content %}

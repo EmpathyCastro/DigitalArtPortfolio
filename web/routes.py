@@ -42,7 +42,7 @@ def project4():
 
 @app.route("/project5")
 def project5():
-    return flask.render_template("empty-project.html", nav_page="projects")
+    return flask.render_template("project5.html", nav_page="projects")
 
 
 @app.route("/statements")
